@@ -7,7 +7,7 @@ import string
 # Making ciphers:
 # Generating a range of ciphers that can be used to encode a message. A user can then choose which cipher to use.
 
-#Making a list of letters - too lazy to type them out into a list
+#Making a list of letters
 letter_list = list(string.ascii_uppercase)
 letter_list.extend(["." , "," ," ", "!" , "?", "'"]) # extending with punctuation
 
