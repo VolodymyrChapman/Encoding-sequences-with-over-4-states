@@ -12,3 +12,5 @@ Xn+1 = (Xn + Ln)/2                     where Xn is the current X coordinate of t
 
 Rearranged algorithm to give only final value of X:
  Xm = Sum of Ln/2^(m-n)                 starting at n=0, where Ln is the coordinate of the associated letter on the circle, n is the position of the letter in the message to be encoded (where the first letter is point 0) and m is the length of the message.
+ 
+ Note: use of symbolic python (SymPy) is essential for accuracy of this circular chaos game encoding method, unlike traditional chaos game encoding
