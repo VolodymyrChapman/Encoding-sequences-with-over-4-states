@@ -14,9 +14,7 @@ from sympy import *
 #       - Test cases are provided and clearly labelled with 'test case:' comments. These are not essential and can be commented out if just the functions are desired.
 #       - Symbolic mathematics is used to reduce the impact of floating point errors, which I have found to significantly affect
 #         encoding if not used. If final values are preferred as floats, please use the   float() function to convert symbolic 
-#         numbers to floats. 
-#         Given the impact of floating point errors on the working of this technique, this should only be used for final X and Y values.
-#         Please refer to the SymPy documentation for clarification on symbolic maths in Python.
+#         numbers to floats. Floats should not be used in decoding due to errors being carried forward.
 
 
 # 1) Making ciphers:
