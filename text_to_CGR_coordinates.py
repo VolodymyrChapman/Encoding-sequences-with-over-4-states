@@ -4,16 +4,18 @@ import string
 from sympy import *
 
 # The file is divided into three parts:
-#                                    1) Creating encoding protocols (ciphers), needed to determine the numerical value of each letter in a message
-#                                    2) Using a chosen cipher to set appropriate coordinates for each letter in a message
-#                                    3) Using a modified, circle-based chaos game representation algorithm to encode the message into
-#                                       single, final X and Y values - if the encoding cipher is known, the encoding process can be reversed to 
-#                                       retrieve the original message
+#        1) Creating encoding protocols (ciphers), needed to determine the numerical value of each letter in a message
+#        2) Using a chosen cipher to set appropriate coordinates for each letter in a message
+#        3) Using a modified, circle-based chaos game representation algorithm to encode the message into
+#           X and Y values - if the encoding cipher is known, the encoding process can be reversed to 
+#           retrieve the original message
 
 # Notes:
-#       - Test cases are provided and clearly labelled with 'test case:' comments. These are not essential and can be commented out if just the functions are desired.
-#       - Symbolic mathematics is used to reduce the impact of floating point errors, which I have found to significantly affect
-#         encoding if not used. If final values are preferred as floats, please use the   float() function to convert symbolic 
+#       - Test cases are provided and clearly labelled with 'test case:' comments. 
+#         These are not essential and can be commented out if just the functions are desired.
+#       - Symbolic mathematics is used to reduce the impact of floating point errors, 
+#         which I have found to significantly affect encoding if not used. 
+#         If final values are preferred as floats, please use the   float() function to convert symbolic 
 #         numbers to floats. Floats should not be used in decoding due to errors being carried forward.
 
 
@@ -21,7 +23,7 @@ from sympy import *
 # Generating a range of ciphers that can be used to encode a message. A user can then choose which cipher to use.
 #Making a list of letters 
 letter_list = list(string.ascii_uppercase)
-letter_list.extend(["." , "," ," ", "!" , "?", "'"]) # extending with punctuation
+letter_list.extend(["." , "," ," ", "!" , "?", "'", ";", "\n", "-", "—"])# extending with punctuation
 
 # Make a cipher function - input is a list of characters in the desired abundance - this
 #function jumbles these letters randomly to make a cipher
@@ -88,13 +90,13 @@ X_test,Y_test = coordinate_setter(message, chosen_cipher)
 # - Use the Xn+1 = (Xn + Ln)/2 encoding pattern to find the X and Y coordinates of the final point.
 # Can work backwards from this final value to decode the message
 def encoder(coordinates):
-    encoded_value = 0                       # Start the value at 0
+    encoded_coordinates = [0]                       # Initiate list for coordinates
 
     for i in range(len(coordinates)):   
-        power = len(coordinates) - i        #Find the power of 2 to divide by, which equal to length of sequence - position of the letter, starting from 0. 
-        value = coordinates[i]/2**power
-        encoded_value += value            
-    return encoded_value
+        
+        encoded_value = (encoded_coordinates[-1] + coordinates[i])/2
+        encoded_coordinates.append(encoded_value)            
+    return encoded_coordinates
 
 #test case: encoder function with X and Y
 encoded_X = encoder(X_test) 
