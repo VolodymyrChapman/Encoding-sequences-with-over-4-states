@@ -3,12 +3,11 @@ Methods of encoding messages (or any sequence of more than 4 possible states) us
 Important note: Unlike square CGR, use of symbolic python (SymPy) is essential for accuracy of the circular chaos game encoding method 
 due to the use of irrational numbers. 
 
-text_to_CGR_coordinates.py returns all of the CGR coordinates for an encoded message
+   text_to_CGR_coordinates.py returns all of the CGR coordinates for an encoded message
 
-text_to_final_CGR_coordinate.py returns only the final X and Y coordinates of an encoded message
+   text_to_final_CGR_coordinate.py returns only the final X and Y coordinates of an encoded message
 
-
-Both 
+Both of these files follow this format: 
    1) Creating ciphers by randomising a list of characters
 
    2) Assigning each character in a message with a point (Ln) on a radius 1 circle (x^2 + y^2 = 1). 
@@ -25,5 +24,7 @@ Both
                                        message to be encoded (where the first letter is point 0) and 
                                        m is the length of the message.
  
-The Speed_testing folder contains speed test comparisons of the summation method vs original algorithm.
-Text used is first 2,490 characters of Frankenstein by Mary Shelley, used under the Project Gutenberg License.  
+   The Speed_testing folder contains speed test comparisons of the summation method vs original algorithm.
+   Text used is first 2,490 characters of Frankenstein by Mary Shelley, used under the Project Gutenberg License.  
+
+   text_plotting_test.py plots the above Frankenstein text as a CGR, an example of which is provided in example_plot_CGR_text.png

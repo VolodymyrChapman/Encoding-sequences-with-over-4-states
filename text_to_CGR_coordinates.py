@@ -83,12 +83,7 @@ X_test,Y_test = coordinate_setter(message, chosen_cipher)
 
 
 
-
-#3) Using the Xn+1 = (Xn + Ln)/2 encoding pattern over letter coordinates to find the 
-# final X and Y values (which can be used to decode the message) 
-
-# - Use the Xn+1 = (Xn + Ln)/2 encoding pattern to find the X and Y coordinates of the final point.
-# Can work backwards from this final value to decode the message
+#3) Using the Xn+1 = (Xn + Ln)/2 encoding pattern over letter coordinates to find circular CGR coordinates
 def encoder(coordinates):
     encoded_coordinates = [0]                       # Initiate list for coordinates
 
