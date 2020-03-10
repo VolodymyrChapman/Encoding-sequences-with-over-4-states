@@ -1,5 +1,5 @@
 # Encoding
-Methods of encoding messages (or any sequence of more than 4 possible states) using a circular Chaos Game Representation (CGR) algorithm.
+Methods of encoding messages (or any sequence with more than 4 possible states) using a circular Chaos Game Representation (CGR) algorithm.
 Important note: Unlike square CGR, use of symbolic python (SymPy) is essential for accuracy of the circular chaos game encoding method 
 due to the use of irrational numbers. 
 
@@ -7,7 +7,7 @@ due to the use of irrational numbers.
 
    text_to_final_CGR_coordinate.py returns only the final X and Y coordinates of an encoded message
 
-Both of these files follow this format: 
+Both of the files follow this format: 
    1) Creating ciphers by randomising a list of characters
 
    2) Assigning each character in a message with a point (Ln) on a radius 1 circle (x^2 + y^2 = 1). 
@@ -28,3 +28,6 @@ Both of these files follow this format:
    Text used is first 2,490 characters of Frankenstein by Mary Shelley, used under the Project Gutenberg License.  
 
    text_plotting_test.py plots the above Frankenstein text as a CGR, an example of which is provided in example_plot_CGR_text.png
+
+   The Fourier_and_even_scaling folder contain scripts for Fourier transformation of text-based CGR data as well as 'even-scaling' 
+   (refer to https://www.sciencedirect.com/science/article/pii/S0888754316300854 for details of this method)
